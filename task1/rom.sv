@@ -4,8 +4,7 @@ module rom #(
 )(
     input  logic clk,
     input  logic [ADDRESS_WIDTH-1:0]  addr,
-    output logic [DATA_WIDTH-1:0]     dout
-
+    output logic [DATA_WIDTH-1:0]     dout,
 );
 
 logic [DATA_WIDTH-1:0] rom_array [2**ADDRESS_WIDTH-1:0];
@@ -16,6 +15,6 @@ initial begin
 end;
 
 always_ff @(posedge clk)
-    dout <= rom_array [addr];
+    dout  <= rom_array [addr];
 
 endmodule
